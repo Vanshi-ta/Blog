@@ -1,15 +1,27 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>blog</title>
-    </head>
-<body>
-    <p>Hi there!</p>
-    <p>It works!</p>
-    <article>
-    <time>published: 14.06.2014</time>
-    <h2><a href="/admin">My first post</a></h2>
-    <p>Text</p>
-</article>
-</body>
-</html>
+{% extends "blog/base.html" %}
+
+{% block title %}Home | My Blog{% endblock %}
+
+{% block content %}
+    {% for post in posts %}
+        <article>
+            <h2>
+                <a href="{{ post.get_absolute_url }}">
+                    {{ post.title }}
+                </a>
+            </h2>
+
+            <p>
+                Published {{ post.published_date|date:"F d, Y" }}
+                by {{ post.author }}
+            </p>
+
+            <p>{{ post.text|truncatewords:30|linebreaks }}</p>
+
+            <a href="{{ post.get_absolute_url }}">Read more →</a>
+        </article>
+        <hr>
+    {% empty %}
+        <p>No posts available.</p>
+    {% endfor %}
+{% endblock %}
