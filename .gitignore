@@ -1,3 +1,2 @@
 myvenv
-migrations
-__pycache__
+blog/migrations
