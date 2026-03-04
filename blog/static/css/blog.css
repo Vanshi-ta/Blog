@@ -1,0 +1,39 @@
+body {
+    padding-left: 20px;
+}
+
+/* Header */
+.page-header {
+    background-color: #C25100;
+    margin-top: 0;
+    margin-bottom: 40px;
+    padding: 20px;
+}
+
+/* Header title */
+.page-header h1,
+.page-header h1 a {
+    color: white;
+    font-size: 36pt;
+    text-decoration: none;
+}
+
+/* Font styling */
+h1, h2, h3, h4 {
+    font-family: 'Lobster', cursive;
+}
+
+/* Date style */
+.date {
+    color: #828282;
+}
+
+/* Blog posts */
+.post {
+    margin-bottom: 60px;
+}
+
+/* Blog title links */
+.post h2 a {
+    color: black;
+}

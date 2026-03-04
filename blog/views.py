@@ -1,5 +1,5 @@
 from django.utils import timezone
-from django.views.generic import ListView, DetailView
+from django.views.generic import ListView
 from .models import Post
 
 
@@ -13,8 +13,3 @@ class PostListView(ListView):
             published_date__lte=timezone.now()
         ).select_related("author")
 
-
-class PostDetailView(DetailView):
-    model = Post
-    template_name = "blog/post_detail.html"
-    context_object_name = "post"
